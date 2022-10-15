@@ -261,14 +261,6 @@ graph [
     LinkSpeedRaw 622000000.0
   ]
   edge [
-    source 4
-    target 7
-    LinkSpeed "155"
-    LinkLabel "155 Mbps"
-    LinkSpeedUnits "M"
-    LinkSpeedRaw 155000000.0
-  ]
-  edge [
     source 5
     target 8
     LinkSpeed "622"
