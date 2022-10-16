@@ -29,8 +29,9 @@ def create_quagga(name,ip):
     file.close()
 
 if __name__ == '__main__':
+
+    # If the gml file is a multigraph you have to write multigraph 1 in graph []
     G = nx.read_gml('Rediris.gml',label='id')
-    print(G.nodes)
     appear = {}
 
     os.makedirs("kathara", exist_ok=True)
@@ -42,10 +43,9 @@ if __name__ == '__main__':
 
     #each edge is a network
     for u, v in list(G.edges()):
-        print(u)
-        print(v)
-        print(appear)
+
         ip+=4
+
         #Check if the nodes already have an ip
         if u not in appear:
             appear.update({u:0})
@@ -66,7 +66,5 @@ if __name__ == '__main__':
         
         write_startupIP(u,appear[u],ip+1)
         write_startupIP(v,appear[v],ip+2)
-
-    print(appear)
 
 
